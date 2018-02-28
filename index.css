@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'Alfa Slab One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alfa Slab One Regular'), local('AlfaSlabOne-Regular'),
+       url('./assets/fonts/alfa-slab-one-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./assets/fonts/alfa-slab-one-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: 'Pragati Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Pragati Narrow Bold'), local('PragatiNarrow-Bold'),
+       url('./assets/fonts/pragati-narrow-v3-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./assets/fonts/pragati-narrow-v3-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+  background-image: url('./assets/images/background.jpg');
+}
+
+button {
+  cursor: pointer;
+}
+
+.device {
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 50%;
+  box-shadow: 0 0 6px 3px #444444;
+  display: grid;
+  grid: 45% 45% / 45% 45%;
+  height: 550px;
+  margin: 75px auto;
+  position: relative;
+  width: 550px;
+}
+
+.device__button--blue-off {
+  background-color: #081077;
+  border-bottom-right-radius: 100%;
+  border-left: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-top: 12.5px solid rgba(0, 0, 0, 0.85);
+}
+
+.device__button--blue-on {
+  background-color: #1e90ff;
+}
+
+.device__button--green-off {
+  background-color: #007000;
+  border-top-left-radius: 100%;
+  border-right: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-bottom: 12.5px solid rgba(0, 0, 0, 0.85);
+}
+
+.device__button--green-on {
+  background-color: #00ff00;
+}
+
+.device__button--on {
+  cursor: pointer;
+}
+
+.device__button--red-off {
+  background-color: #770000;
+  border-top-right-radius: 100%;
+  border-left: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-bottom: 12.5px solid rgba(0, 0, 0, 0.85);
+}
+
+.device__button--red-on {
+  background-color: #ff1100;
+}
+
+.device__button--yellow-off {
+  background-color: #ccaa00;
+  border-bottom-left-radius: 100%;
+  border-right: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-top: 12.5px solid rgba(0, 0, 0, 0.85);
+}
+
+.device__button--yellow-on {
+  background-color: #ffff00;
+}
+
+.device-center {
+  align-content: center;
+  background-color: Gainsboro;
+  border: 15px solid rgba(0, 0, 0, 0.85);
+  border-radius: 50%;
+  display: grid;
+  grid-template-areas:
+    ". title title title title title title title ."
+    ". . count-display . start-button strict-light strict-button . ."
+    ". . count-label . start-label . strict-label . ."
+    ". . off on-off on-off on . . .";
+  grid-template-columns: .35fr .15fr 60px 15px 40px 10px 40px .15fr .35fr;
+  grid-template-rows: 60px 40px 20px 25px;
+  height: 250px;
+  left: 50%;
+  margin: -140px;
+  position: absolute;
+  top: 50%;
+  width: 250px;
+}
+
+.device-center__button {
+  border: 5px solid black;
+  border-radius: 50%;
+  height: 30px;
+  margin: auto;
+  width: 30px;
+}
+
+.device-center__button:active {
+  outline: 0;
+  transform: translateY(1.5px);
+}
+
+.device-center__button--start {
+  background-color: red;
+  grid-area: start-button;
+}
+
+.device-center__button--strict {
+  background-color: yellow;
+  grid-area: strict-button;
+}
+
+.device-center__count-display {
+  background-color: #220000;
+  border: 4px solid black;
+  border-radius: 8px;
+  color: #330000;
+  font-size: 24px;
+  grid-area: count-display;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+  text-align: center;
+}
+
+.device-center__count-display--on {
+  color: red;
+}
+
+.device-center__label {
+  font: 14px "Pragati Narrow", sans-serif;
+  line-height: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.device-center__label--count {
+  grid-area: count-label;
+}
+
+.device-center__label--off {
+  grid-area: off;
+  line-height: 25px;
+  margin-right: 5px;
+  text-align: right;
+}
+
+.device-center__label--on {
+  grid-area: on;
+  line-height: 25px;
+  margin-left: 5px;
+  text-align: left;
+}
+
+.device-center__label--start {
+  grid-area: start-label;
+}
+
+.device-center__label--strict {
+  grid-area: strict-label;
+}
+
+.device-center__strict-light {
+  background-color: #220000;
+  border: 2px solid black;
+  border-radius: 50%;
+  bottom: 7.5px;
+  grid-area: strict-light;
+  height: 5px;
+  left: 25px;
+  position: relative;
+  width: 5px;
+}
+
+.device-center__strict-light--on {
+  background-color: red;
+}
+
+.device-center__title {
+  font: bold 50px "Alfa Slab One", cursive;
+  grid-area: title;
+  height: 55px;
+  line-height: 55px;
+  margin: 0;
+  text-align: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.on-off-button {
+  background-color: #00004d;
+  border: 2px solid black;
+  grid-area: on-off;
+  position: relative;
+}
+
+.on-off-button__off,
+.on-off-button__on {
+  background-color: #1e90ff;
+  border-radius: 2px;
+  height: 21px;
+  position: absolute;
+  top: 0;
+  width: 24.5px;
+}
+
+.on-off-button__off {
+  left: 0;
+}
+
+.on-off-button__on {
+  right: 0;
+}
+
+.trademark-symbol {
+  font-size: 24px;
+  font-weight: normal;
+  position: relative;
+  bottom: 20px;
+}
