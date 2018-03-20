@@ -2,12 +2,14 @@ import * as game from './game';
 import './index.css';
 
 const handleColorBtnDown = (event) => {
+  event.preventDefault();
   if (game.hasColorBtnsEnabled()) {
     game.receivePlayerColor(event.target.id);
   }
 };
 
 const handleColorBtnUp = (event) => {
+  event.preventDefault();
   if (game.hasColorBtnsEnabled()) {
     game.playerColorReceived(event.target.id);
   }
@@ -42,6 +44,8 @@ function handleStrictClick() {
 
 const colorBtns = Array.from(document.getElementById('device').children).slice(0, 4);
 colorBtns.forEach((btn) => {
+  btn.addEventListener('touchstart', handleColorBtnDown);
+  btn.addEventListener('touchend', handleColorBtnUp);
   btn.addEventListener('mousedown', handleColorBtnDown);
   btn.addEventListener('mouseup', handleColorBtnUp);
 });

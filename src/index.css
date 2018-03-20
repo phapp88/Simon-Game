@@ -18,6 +18,7 @@
 
 body {
   background-image: url('./assets/images/background.jpg');
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -27,13 +28,14 @@ button {
 .device {
   align-content: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: black;
   border-radius: 50%;
   box-shadow: 0 0 6px 3px #444444;
   display: grid;
   grid: 45% 45% / 45% 45%;
   height: 550px;
   margin: 75px auto;
+  opacity: 0.85;
   position: relative;
   width: 550px;
 }
@@ -41,8 +43,8 @@ button {
 .device__button--blue-off {
   background-color: #081077;
   border-bottom-right-radius: 100%;
-  border-left: 12.5px solid rgba(0, 0, 0, 0.85);
-  border-top: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-left: 12.5px solid black;
+  border-top: 12.5px solid black;
 }
 
 .device__button--blue-on {
@@ -52,8 +54,8 @@ button {
 .device__button--green-off {
   background-color: #007000;
   border-top-left-radius: 100%;
-  border-right: 12.5px solid rgba(0, 0, 0, 0.85);
-  border-bottom: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-right: 12.5px solid black;
+  border-bottom: 12.5px solid black;
 }
 
 .device__button--green-on {
@@ -67,8 +69,8 @@ button {
 .device__button--red-off {
   background-color: #770000;
   border-top-right-radius: 100%;
-  border-left: 12.5px solid rgba(0, 0, 0, 0.85);
-  border-bottom: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-left: 12.5px solid black;
+  border-bottom: 12.5px solid black;
 }
 
 .device__button--red-on {
@@ -78,8 +80,8 @@ button {
 .device__button--yellow-off {
   background-color: #ccaa00;
   border-bottom-left-radius: 100%;
-  border-right: 12.5px solid rgba(0, 0, 0, 0.85);
-  border-top: 12.5px solid rgba(0, 0, 0, 0.85);
+  border-right: 12.5px solid black;
+  border-top: 12.5px solid black;
 }
 
 .device__button--yellow-on {
@@ -89,7 +91,7 @@ button {
 .device-center {
   align-content: center;
   background-color: Gainsboro;
-  border: 15px solid rgba(0, 0, 0, 0.85);
+  border: 15px solid black;
   border-radius: 50%;
   display: grid;
   grid-template-areas:
@@ -239,4 +241,64 @@ button {
   font-weight: normal;
   position: relative;
   bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .device {
+    height: 350px;
+    margin-top: 30px;
+    width: 350px;
+  }
+
+  .device__button--blue-off {
+    border-left-width: 9px;
+    border-top-width: 9px;
+  }
+
+  .device__button--green-off {
+    border-bottom-width: 9px;
+    border-right-width: 9px;
+  }
+
+  .device__button--red-off {
+    border-bottom-width: 9px;
+    border-left-width: 9px;
+  }
+
+  .device__button--yellow-off {
+    border-right-width: 9px;
+    border-top-width: 9px;
+  }
+
+  .device-center {
+    border-width: 11px;
+    height: 178px;
+    grid-template-columns: .35fr .15fr 44px 8px 40px 1px 40px .15fr .35fr;
+    grid-template-rows: 51px 40px 20px 25px;
+    margin: -100px;
+    width: 178px;
+  }
+
+  .device-center__label {
+    font-size: 12px;
+  }
+
+  .device-center__strict-light {
+    left: 16.5px;
+  }
+
+  .device-center__title {
+    font-size: 34px;
+  }
+
+  .on-off-button__off,
+  .on-off-button__on {
+    width: 21px;
+  }
+
+  .trademark-symbol {
+    bottom: 17px;
+    font-size: 20.5px;
+    right: 4px;
+  }
 }

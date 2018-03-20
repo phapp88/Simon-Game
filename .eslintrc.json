@@ -1,10 +1,13 @@
 {
+    "env": {
+      "browser": "true"
+    },
     "extends": "airbnb-base",
     "globals": {
-      "Audio": false,
-      "document": false
+      "Audio": false
     },
     "rules": {
+      "linebreak-style": "off",
       "no-plusplus": "off"
     }
 }
