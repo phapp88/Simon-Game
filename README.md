@@ -1,4 +1,4 @@
-#Simon Game
+# Simon Game
 
 A JavaScript implementation of the classic game.
 
