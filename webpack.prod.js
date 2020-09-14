@@ -1,4 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const { merge } = require('webpack-merge');
 
@@ -32,6 +34,10 @@ const config = merge(common, {
         ],
       },
     ],
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    runtimeChunk: 'single',
   },
   output: {
     filename: '[name].[contenthash].js',
